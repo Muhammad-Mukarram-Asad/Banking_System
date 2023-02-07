@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank System</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1> <span> Developed By: </span> M.Mukarram Asad.</h1>
     <div class="navigation">
-        <img src="https://av.sc.com/corp-en/content/images/sc-lock-up-english-rgb-thumbnail-278x220.jpg" alt="standard bank logo">
+        <img src="https://av.sc.com/corp-en/content/images/sc-lock-up-english-rgb-thumbnail-278x220.jpg"
+            alt="standard bank logo">
         <nav>
             <ul>
                 <li id="active">Home</li>
@@ -27,37 +36,128 @@
         </div>
     </div>
 
+    <!-- Mobile Devices Naviagtion -->
+    <div class="mob_navigation">
+        <div class="nav_icons">
+            <i id="bar_icon" class="fa-solid fa-bars"></i>
+            <i id="cross_icon" class="fa-solid fa-xmark"></i>
+        </div>
+        <div id="nav_items" style="display: none;">
+            <img src="https://av.sc.com/corp-en/content/images/sc-lock-up-english-rgb-thumbnail-278x220.jpg"
+                alt="standard bank logo">
+            <nav>
+                <ul>
+                    <li id="active_mob">Home</li>
+                    <li>Features</li>
+                    <li>About Us</li>
+                    <li>Blog</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+            <div id="mob_btns_div">
+                <button>Login</button>
+                <button>Register</button>
+            </div>
+        </div>
+
+    </div>
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-8 col-sm-4 col-12 inner_container">
-                <div class="inner_left_part col-lg-6 col-md-4 col-sm-2 col-12">
+            <div class="col-12 col-lg-12 inner_container">
+                <div class="inner_left_part col-lg-6">
                     <button>Welcome to Standard Chartered</button>
                     <h1>
-                        Favorable Credit <br>
-                        Cards for the <br>
-                       <span id="left_part_span">Modern </span>  World
+                        Favorable Credit Cards for the <br />
+                        <span id="left_part_span">Modern </span> World
                     </h1>
 
                     <p>
-                        Come on join us, and enjoy unlimited features of <br>
-                       <span id="left_part_span"> Online Banking.</span> <br>
-                        Avail discount offers on <span id="left_part_span"> Credit Cards, 
-                        Debit Cards </span>  <br> 
-                        and much more.
+                        Come on join us, and enjoy unlimited features of 
+                        <span id="left_part_span"> Online Banking.</span> <br>
+                        Avail discount offers on <span id="left_part_span"> Credit Cards,
+                            Debit Cards </span> and much more.
                     </p>
                 </div>
 
-                <div class="inner_right_part col-lg-6 col-md-4 col-sm-2 col-12">
+                <div class="inner_right_part col-lg-6  col-12">
                     <img src="https://pbs.twimg.com/media/Ebv-XGGWoAEe1U6.jpg" alt="bank image" />
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="backend_div">
-        <h1> This div is for showing the data of the customers of the bank.</h1>
+    <div class="backend_div m-5">
         <h3> Customer Details</h3>
+        <p id="backend_p">Click the below button for customer details:</p>
+        <button id="show_btn" type="button" class="btn btn-outline-success btn-lg m-3">
+            Click me if you can
+        </button>
+        <div class="container" style="overflow-x:auto; margin-left: -40px;">
+            <table class="table table-dark">
+                <thead>
+                    <th>Serial Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact Number</th>
+                    <th>Account Balance</th>
+                    <th><button id="select_customer_btn">Select the customer</button></th>
+                </thead>
+                <tbody id="t_body" class="table table-dark table-hover"></tbody>
+            </table>
+        </div>
+
     </div>
-    
+
+    <div id="info_customer_div" style="display:none">
+        <h1> Customer Complete Details are as follows:</h1>
+        <div class="info_label_input_div">
+            <label>Customer Name:</label>
+            <input id="name_input" type="text" disabled>
+        </div>
+
+        <div class="info_label_input_div">
+            <label>Customer Nationality:</label>
+            <input id="nat_input" type="text" disabled>
+        </div>
+
+        <div class="info_label_input_div">
+            <label>Customer Gender:</label>
+            <input id="gender_input" type="text" disabled>
+        </div>
+
+        <div class="info_label_input_div">
+            <label>Customer Age:</label>
+            <input id="age_input" type="text" disabled>
+        </div>
+
+        <div class="info_label_input_div">
+            <label>Customer Contact Number:</label>
+            <input id="number_input" type="text" disabled>
+        </div>
+
+        <div class="info_label_input_div">
+            <label>Customer Account Balance:</label>
+            <input id="balance_input" type="text" disabled>
+        </div>
+
+        <p> Want to do a transaction? If Yes, kindly click the below button</p>
+        <a href="transaction.html" target="_blank" rel="noopener noreferrer">
+            <button type="button" id="c_select_btn">Transaction</button>
+        </a>
+    </div>
+
+
+    <!-- <button type="button" id="insert_btn">Insert Data</button> 
+        <button type="button" id="select_btn">Select Data</button>  -->
+
+    <div class="footer">
+        <p id="footer_p">Developed By: <br>
+            <span id="footer_span">Muhammad Mukarram Asad</span>
+        </p>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>

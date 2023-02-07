@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="transaction.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>   -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <h1>Transaction Feature Enable</h1>
+    <div class="info_gathering_div">
+
+        <div class="info_sender_div">
+            <h2>Sender Details:</h2>
+            <p>In order to find the sender data, <br> 
+                kindy give the sender_id below: 
+            </p>
+            <input type="text" id="sender_id" placeholder="Enter The Sender_Id Here:">
+            <div id="input_div"></div>
+            <button id="sender_btn">Search Sender</button>
+        </div>
+        <div class="info_receiver_div">
+            <h2>Receiver Details:</h2>
+            <p>In order to find the receiver data, <br> 
+                kindy give the receiver_id below: 
+            </p>
+            <input type="text" id="receiver_id" placeholder="Enter The Receiver_Id Here:">
+            <div id="r_input_div"></div>
+            <button id="receiver_btn">Search Receiver</button>
+        </div>
+    </div>
+
+    <div class="money_transer_div">
+        <label for="money">Enter the amount of money you want to transfer below:</label>
+        <input type="text" placeholder="Enter the amount in words:" id="amount_input_text">
+        <input type="number" placeholder="Enter the amount please:" id="amount_input">
+        <button id="send_btn">Send Money</button>
+    </div>
+
+    <a href="index.html"> <button> Home Page </button> </a>
+
+    <script src="transaction.js" type="module"></script>
+    
+</body>
+</html>
