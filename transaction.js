@@ -109,7 +109,7 @@ function transfer_amount_method() {
       sender_current_balance = snapshot.val().Customer_Balance;
       console.log(sender_current_balance + " " + typeof(sender_current_balance));
     } else {
-      alert("Something is wrong sender data.");
+      alert("Something is wrong in calling sender data from datavbase.");
     }
 
     get(child(database_ref, "Customers/" + receiver_id.value)).then(
@@ -158,6 +158,7 @@ function transfer_amount_method() {
       }
     );
   });
+  transfer_amount = "";
 }
 
 let send_btn = document.getElementById("send_btn");
